@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "./index.css";
 
 
@@ -116,7 +117,23 @@ return(
 {/* HERO */}
 
 
-<section className="hero">
+<motion.section 
+className="hero"
+
+initial={{
+opacity:0,
+y:40
+}}
+
+animate={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:0.8
+}}
+>
 
 <div>
 
@@ -160,7 +177,7 @@ LinkedIn
 
 </div>
 
-</section>
+</motion.section>
 
 
 
@@ -371,7 +388,24 @@ practical application development.
 
 {open !== null && (
 
-<div className="card expanded">
+<motion.div
+className="card expanded"
+
+initial={{
+opacity:0,
+y:-30
+}}
+
+animate={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:0.5
+}}
+
+>
 
 <h3>{projects[open].title}</h3>
 
@@ -402,7 +436,7 @@ Show Less
 </button>
 
 
-</div>
+</motion.div>
 
 )}
 
@@ -414,7 +448,25 @@ Show Less
 
 open !== index && (
 
-<div className="card" key={index}>
+<motion.div
+className="card"
+key={index}
+
+initial={{
+opacity:0,
+scale:0.9
+}}
+
+whileInView={{
+opacity:1,
+scale:1
+}}
+
+transition={{
+duration:0.4
+}}
+
+>
 
 
 <h3>
@@ -440,7 +492,7 @@ View More
 </button>
 
 
-</div>
+</motion.div>
 
 )
 
